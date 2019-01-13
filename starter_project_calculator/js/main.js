@@ -130,7 +130,7 @@ function backspace(){
         display.innerHTML = num1 + operator + num2;
         num2 = temp2;
         flag = 1;
-        
+
         if(operator === 1){
             display.innerHTML = num1 + "+" + num2;
         }else if(operator === 2){
@@ -142,5 +142,43 @@ function backspace(){
         } //fin del if
 
     }//fin del if
+
+}//fin funcion
+
+//funcion setDecimal
+
+function setDecimal(){
+    if(flag === 0){
+        if(num1 === ""){
+            num1 = "0.";
+            display.innerHTML = num1;
+        }//fin del if uno
+
+        if(num1.indexOf('.') === -1){
+            num1 += ".";
+            display.innerHTML = num1;
+        }//fin del if dos
+    }//fin del if
+    if(flag === 1){
+        if(num2 === ""){
+            num2 = "0.";
+            display.innerHTML+=num2;
+        }//fin de if uno
+        if(num2.indexOf('.') === -1){
+            num2+=".";
+            display.innerHTML = num1 + operator + num2;
+
+            if(operator === 1){
+                display.innerHTML = num1 + "+" + num2;
+            }else if(operator === 2){
+                display.innerHTML = num1 + "-" + num2;
+            }else if(operator === 3){
+                display.innerHTML = num1 + "*" + num2;
+            }else if(operator === 4){
+                display.innerHTML = num1 + "/" + num2;
+            }//fin del if
+
+        }//fin de if dos
+    }//fin de if
 
 }//fin funcion
