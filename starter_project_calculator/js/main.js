@@ -95,3 +95,14 @@ function equalClick(){
         display.innerHTML="Operacion no valida!"
     }
 }//fin funcion
+
+//funcion clearButton
+
+function clearButton(){
+    num1 = "";
+    num2 = "";
+    flag = 0;
+    display.innerHTML = "";
+    equalTo = 0;
+
+}//fin funcion
