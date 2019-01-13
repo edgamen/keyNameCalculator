@@ -104,5 +104,43 @@ function clearButton(){
     flag = 0;
     display.innerHTML = "";
     equalTo = 0;
+}//fin funcion
+
+//funcion backspace
+function backspace(){
+    var temp1 = "";
+    var temp2 = "";
+    if(equalTo === 1){
+        clearButton();
+    }//fin del if
+
+    if(flag === 0){
+        temp1 = num1.substring(0,num1.length-1);
+        display.innerHTML = temp1;
+        num1 = temp1;
+    }//fin del if
+
+    if(flag === 1){
+        display.innerHTML = num1;
+        flag = 0;
+    }//fin del if
+
+    if(num2 !== ""){
+        temp2 = num2.substring(0,num2.length-1);
+        display.innerHTML = num1 + operator + num2;
+        num2 = temp2;
+        flag = 1;
+        
+        if(operator === 1){
+            display.innerHTML = num1 + "+" + num2;
+        }else if(operator === 2){
+            display.innerHTML = num1 + "-" + num2;
+        }else if(operator === 3){
+            display.innerHTML = num1 + "*" + num2;
+        }else if (operator === 4){
+            display.innerHTML = num1 + "/" + num2;
+        } //fin del if
+
+    }//fin del if
 
 }//fin funcion
