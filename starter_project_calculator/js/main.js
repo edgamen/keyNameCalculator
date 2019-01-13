@@ -1,4 +1,4 @@
-// calculator
+// calculator based on Udemy course
 
 //Global vars
 
@@ -131,15 +131,7 @@ function backspace(){
         num2 = temp2;
         flag = 1;
 
-        if(operator === 1){
-            display.innerHTML = num1 + "+" + num2;
-        }else if(operator === 2){
-            display.innerHTML = num1 + "-" + num2;
-        }else if(operator === 3){
-            display.innerHTML = num1 + "*" + num2;
-        }else if (operator === 4){
-            display.innerHTML = num1 + "/" + num2;
-        } //fin del if
+        setOppString();//se elimina bloque condicional y se agrega como funcion
 
     }//fin del if
 
@@ -168,7 +160,10 @@ function setDecimal(){
             num2+=".";
             display.innerHTML = num1 + operator + num2;
 
-            if(operator === 1){
+            setOppString();
+            //comentamos bloque condicional y reemplazamos por la funcion
+
+          /*  if(operator === 1){
                 display.innerHTML = num1 + "+" + num2;
             }else if(operator === 2){
                 display.innerHTML = num1 + "-" + num2;
@@ -176,9 +171,23 @@ function setDecimal(){
                 display.innerHTML = num1 + "*" + num2;
             }else if(operator === 4){
                 display.innerHTML = num1 + "/" + num2;
-            }//fin del if
+            }//fin del if*/
 
         }//fin de if dos
     }//fin de if
 
 }//fin funcion
+
+//funcion setOppString
+function setOppString(){
+    if(operator === 1){
+        display.innerHTML = num1 + "+" + num2;
+    }else if(operator === 2){
+        display.innerHTML = num1 + "-" + num2;
+    }else if(operator === 3){
+        display.innerHTML = num1 + "*" + num2;
+    }else if (operator === 4){
+        display.innerHTML = num1 + "/" + num2;
+    } //fin del if
+
+}//fin de funcion
